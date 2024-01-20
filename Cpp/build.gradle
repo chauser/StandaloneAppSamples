@@ -1,6 +1,6 @@
 plugins {
     id "cpp"
-    id "edu.wpi.first.GradleRIO" version "2024.1.1-beta-2"
+    id "edu.wpi.first.GradleRIO" version "2024.1.1"
 }
 
 // Disable local cache, as it won't have the cross artifact necessary
@@ -17,8 +17,8 @@ nativeUtils.withCrossLinuxArm64()
 model {
     components {
         "${appName}"(NativeExecutableSpec) {
-            //targetPlatform wpi.platforms.desktop // Uncomment to build on whatever the native platform currently is
-            targetPlatform wpi.platforms.linuxarm64
+            targetPlatform wpi.platforms.desktop // Uncomment to build on whatever the native platform currently is
+            // targetPlatform wpi.platforms.linuxarm64
             //targetPlatform wpi.platforms.linuxarm32 // Uncomment to build for arm32
 
             sources.cpp {
